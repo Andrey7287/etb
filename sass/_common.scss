@@ -7,7 +7,9 @@
 	box-sizing: border-box;
 }
 
-// Font
+.body {
+	max-width: 1920px;
+}
 
 body, p {
 	@include font;
@@ -55,14 +57,19 @@ nav {
 // Headers
 
 h1, .h1 {
-
+	@include font(30, 32, 400);
+	color: $header;
 	text-transform: uppercase;
+	margin: 20px 0;
 }
 h2, .h2 {
-
-	text-transform: uppercase;
+	@include font(30, 32, 400);
+	color: $header;
+	border-bottom: 1px solid #d8d8d8;
+	margin: 20px 0;
 }
 h3, .h3 {
-
+	color: $header;
 	text-transform: uppercase;
+	margin: 15px 0;
 }

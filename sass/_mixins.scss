@@ -1,71 +1,42 @@
 @mixin clearfix {
-  &:after {
-  content: "";
-  display: table;
-  clear: both;
-  }
-}
-
-/*Descriptions
-$path - url to sprite img
-$width - width of the single image in target sprite
-$height - height of the single image
-$row and $cell - amount of rows and cells in sprite
-0 - eq. the first
-1 - second, etc
-( look at your sprite like it would be the table )*/
-
-@mixin sprite($path, $width, $height, $row, $cell) {
-  &::before {
-  content: "";
-  display: inline-block;
-  width: $width+px;
-  height: $height+px;
-  background: url($path) (-$cell * $width)+px (-$row * $height)+px no-repeat;
-  }
-}
-@mixin sprite-pos($path, $width, $height, $row, $cell, $pos-x: 0, $pos-y: 0) {
-  position: relative;
-  &::before {
-  position: absolute;
-  top: $pos-y + px;
-  left: $pos-x + px;
-  content: "";
-  display: inline-block;
-  width: $width+px;
-  height: $height+px;
-  background: url($path) (-$cell * $width)+px (-$row * $height)+px no-repeat;
-  }
+	&:after {
+	content: "";
+	display: table;
+	clear: both;
+	}
 }
 
 @mixin breakpoint($point) {
-  @if $point == desktop {
-  @media (min-width: 1024px) { @content; }
-  }
-  @if $point == tablet {
-  @media (min-width: 768px) and (max-width: 1023px) { @content; }
-  }
-  @if $point == tablet-desktop {
-  @media (min-width: 768px) { @content; }
-  }
-  @if $point == all-small {
-    @media (max-width: 1023px ) { @content; }
-  }
-  @if $point == mobile {
-  @media (max-width: 767px ) { @content; }
-  }
-  // Additional
-  @if $point == tablet-small {
-    @media (min-width: 426px) and (max-width: 767px) { @content; }
-  }
-  @if $point == mobile-small {
-    @media (max-width: 480px) { @content; }
-  }
+	@if $point == desktop {
+	@media (min-width: 992px) { @content; }
+	}
+	@if $point == tablet {
+	@media (min-width: 768px) and (max-width: 992px) { @content; }
+	}
+	@if $point == tablet-desktop {
+	@media (min-width: 768px) { @content; }
+	}
+	@if $point == all-small {
+		@media (max-width: 992px ) { @content; }
+	}
+	@if $point == mobile {
+	@media (max-width: 767px ) { @content; }
+	}
+	// Additional
+	@if $point == tablet-small {
+		@media (min-width: 426px) and (max-width: 767px) { @content; }
+	}
+	@if $point == mobile-small {
+		@media (max-width: 480px) { @content; }
+	}
 }
 
-@mixin font($weight: 400, $size: $base-font-size, $height: $base-line-height, $font: $default-font){
+@mixin font($size: $base-font-size, $height: $base-line-height, $weight: 400, $context: $base-font-size, $font: $default-font){
 	font-weight: $weight;
-	font-size: $size/$base-font-size + em;
-	line-height: $height/$base-line-height + em;
+
+	$this: $size/$context;
+
+	font-size: $this + em;
+	line-height: $height/$size + em;
 	font-family: $font;
 }

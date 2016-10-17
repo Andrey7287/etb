@@ -9,13 +9,13 @@ gulp.task('compass', function() {
 		.pipe(compass({
 			config_file: './config.rb',
 			css: './',
-			sass: './'
+			sass: 'sass'
 		}))
 		.pipe(gulp.dest('./'));
 });
 
 gulp.task('concat', function(){
-	return gulp.src('./js/src/*.js')
+	return gulp.src(['./js/src/jquery.min.js', './js/src/jquery.fancybox.pack.js', './js/src/my.js'])
 	.pipe(concat('./js/project.js'))
 	.pipe(gulp.dest('./'))
 });
@@ -23,6 +23,6 @@ gulp.task('concat', function(){
 gulp.task('default', ['concat', 'compass'], function() {
 	browserSync.init({
 		server: ".",
-		files: ["css.css", "js/*.js", "index.html"]
+		files: ["css.css", "js/src/*.js", "index.html"]
 	});
 });
