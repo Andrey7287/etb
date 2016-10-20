@@ -44,13 +44,11 @@ textarea {
 a {
 	color: $link;
 	transition: 0.3s;
-	display: inline-block;
+	text-decoration: none;
 	&:hover,
 	&:focus {
-		color: $link-hov;
-		text-decoration: none;
+		color: darken($link, 15%);
 	}
-
 	&:focus {
 		outline: none;
 	}
@@ -115,6 +113,16 @@ h3, .h3 {
 	span {
 		border-bottom: 1px solid #6a8d55;
 	}
+}
+
+.sub-title {
+	@include font(22,22, 700);
+	color: $grey;
+	margin-bottom: -12px;
+}
+
+.italic {
+	font-style: italic;
 }
 
 .head-link {

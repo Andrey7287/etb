@@ -43,3 +43,38 @@
 		}
 	}
 }
+/* FULL */
+.quoted {
+	padding-left: 80px;
+	position: relative;
+	&::before {
+		content: ".";
+		font-size: 0;
+		line-height: 0;
+		width: 51px;
+		height: 38px;
+		display: block;
+		position: absolute;
+		top: 7px;;
+		left: 0;
+		background: sprite($site-sprite, q) no-repeat;
+	}
+}
+
+.back{
+	text-align: right;
+	&__item {
+		position: relative;
+		&::before {
+			content: ".";
+			font-size: 0;
+			line-height: 0;
+			position: absolute;
+			width: 23px;
+			height: 7px;
+			background: sprite($site-sprite, arrow_prev_blue);
+			left: -30px;
+			top: calc(50% - 3.5px);
+		}
+	}
+}
