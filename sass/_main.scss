@@ -1,1 +1,126 @@
+/*GREEN banner*/
+.presentation {
+	padding: 38px 0;
+	height: 304px;
+	background: url(images/banner.jpg) 0 0 no-repeat;
+	color: #fff;
+	&__item {
+		margin: 30px 0;
+		padding-left: 70px;
+		position: relative;
+		@each $i in 1, 2 {
+			&[data-pic="#{$i}"]::before {
+				position: absolute;
+				top:0;
+				left:0;
+				content: ".";
+				font-size: 0;
+				display: block;
+				width: 62px;
+				height: 51px;
+				background: sprite($site-sprite, green_#{$i}) no-repeat;
+			}
+		}
 
+	}
+	.white-title {
+		margin-bottom: 44px;
+	}
+	&__txt {
+		@include font(20, 24);
+		span {
+			font-weight: 700;
+			display: block;
+		}
+	}
+}
+/*ordered list*/
+.advantages {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	&__item {
+		padding-left: 80px;
+		position: relative;
+		@include font(20,26);
+		margin: 22px 0 49px;
+		&::before {
+			content: attr(data-num);
+			display: block;
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			background: #e1e1e1;
+			@include font(36,50,700,20);
+			color: #fff;
+			text-align: center;
+			position: absolute;
+			top: calc(50% - 25px);
+			left: 0;
+		}
+	}
+}
+/*bottom slider*/
+.slider-bottom-outer {
+	height: 465px;
+	background: url(images/blue.jpg) no-repeat;
+	.white-title {
+		margin: 55px 0 40px;
+	}
+}
+/*TEAM*/
+.team {
+	margin: 20px 0 60px;
+	&__photo{
+		height: 294px;
+		border-radius: 1000px;
+		overflow: hidden;
+		margin-bottom: 15px;
+		background: url(images/noone.jpg);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__name {
+		@include font(20);
+		color: $black;
+		text-align: center;
+		margin: 5px 0;
+	}
+	&__post {
+		@include font(18);
+		color: $grey;
+		text-align: center;
+	}
+}
+
+/*NEWS*/
+.news {
+	margin-top: 10px;
+	&__date {
+		@include font(16);
+		color: $grey;
+	}
+	&__img {
+		position: relative;
+		margin: 7px 0 23px;
+		.txt {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			padding: 50px 0;
+			span {
+				@include font(24,26,700);
+				color: #fff;
+			}
+		}
+	}
+	&__txt {
+		@include font(15);
+		margin-bottom: 17px;
+	}
+}

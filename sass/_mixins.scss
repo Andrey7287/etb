@@ -5,7 +5,9 @@
 	clear: both;
 	}
 }
-
+.clearfix {
+	@include clearfix;
+}
 @mixin breakpoint($point) {
 	@if $point == desktop {
 	@media (min-width: 992px) { @content; }
@@ -39,4 +41,15 @@
 	font-size: $this + em;
 	line-height: $height/$size + em;
 	font-family: $font;
+}
+
+@mixin link($color, $hov: darken($color, 15%)){
+	color: $color;
+	border-bottom: 1px solid $color;
+	transition: 0.3s;
+	text-decoration: none;
+	&:hover {
+		border-bottom: 1px solid transparent;
+		color: $hov;
+	}
 }

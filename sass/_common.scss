@@ -12,8 +12,19 @@
 }
 
 body, p {
-	@include font;
+	font-size: 15px;
 	color: $default-color;
+}
+p {
+	@include font;
+	&:first-of-type {
+		margin: 0;
+	}
+}
+
+.block {
+	margin-top: 45px;
+	margin-bottom: 45px;
 }
 
 // Reset fonts for relevant elements
@@ -33,6 +44,7 @@ textarea {
 a {
 	color: $link;
 	transition: 0.3s;
+	display: inline-block;
 	&:hover,
 	&:focus {
 		color: $link-hov;
@@ -41,6 +53,21 @@ a {
 
 	&:focus {
 		outline: none;
+	}
+	&.pdf {
+		text-decoration: none;
+		&::before {
+			content: ".";
+			text-indent: -99999px;
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			background: sprite($site-sprite, pdf);
+			margin-right: 5px;
+		}
+	}
+	&[href^="mailto"]{
+		@include link(#004b62);
 	}
 }
 
@@ -60,16 +87,154 @@ h1, .h1 {
 	@include font(30, 32, 400);
 	color: $header;
 	text-transform: uppercase;
-	margin: 20px 0;
+	margin: 18px 0;
 }
 h2, .h2 {
-	@include font(30, 32, 400);
+	@include font(30, 32, 700);
 	color: $header;
-	border-bottom: 1px solid #d8d8d8;
-	margin: 20px 0;
+	margin: 15px 0;
+	a {
+		color: $header;
+		text-decoration: none;
+		border-bottom: 1px solid #d8d8d8;
+		&:hover {
+			color: lighten($header, 15%);
+			border-bottom: 1px solid transparent;
+		}
+	}
 }
 h3, .h3 {
+	@include font(20, 24, 700);
 	color: $header;
+	margin: 10px 0;
+}
+.white-title {
+	@include font(30,24, 700);
+	color: #fff;
+	margin: 10px 0;
+	span {
+		border-bottom: 1px solid #6a8d55;
+	}
+}
+
+.head-link {
+	@include font(20);
+	color: $black;
+	text-decoration: none;
+	position: relative;
+	margin-bottom: 33px;
+	&::after {
+		content: ".";
+		font-size: 0;
+		line-height: 0;
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: -17px;
+		width: 80px;
+		height: 5px;
+		background: #dadada;
+	}
+	&:hover {
+		color: #01a3d4;
+		&::after {
+			background: #c1eaf7;
+		}
+	}
+}
+$btn-bkg: #01a3d4;
+.btn {
+	width: 100%;
+	background: $btn-bkg;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	border-radius: 4px;
+	margin: 25px 0;
 	text-transform: uppercase;
-	margin: 15px 0;
+	@include font(20, 30);
+	text-decoration: none;
+	&:hover {
+		background: lighten($btn-bkg, 5%);
+		color: #fff;
+	}
+}
+.breadcrumbs {
+	color: #999;
+	margin-bottom: 30px;
+	&__item {
+		@include font(12, 15);
+		color: #999;
+		transition: 0.3s;
+	}
+	a {
+		@include link(#999);
+		border-color: #d6d6d6;
+	}
+}
+
+.inner {
+	margin-bottom: 20px;
+}
+
+.paging {
+	margin: 30px 0 50px;
+	display: block;
+	&__item {
+		position: relative;
+		@include font(20);
+		padding: 0 6px;
+		color: #005771;
+		text-decoration: none;
+		&::before {
+			position: absolute;
+			content: ".";
+			font-size: 0;
+			line-height: 0;
+			width: 23px;
+			height: 7px;
+			top: -11px;
+		}
+		@each $arrow in prev,next {
+
+			@if $arrow == prev {
+				&--#{$arrow} {
+					margin-right: 15px;
+					font-size: 0;
+				}
+			}
+			@if $arrow == next {
+				&--#{$arrow} {
+					margin-left: 15px;
+					font-size: 0;
+				}
+			}
+
+			&--#{$arrow}::before {
+				background: sprite($site-sprite, arrow_#{$arrow}_grey) no-repeat;
+				@if $arrow == prev {
+					left: -5px;
+				}
+				@if $arrow == next {
+					right: -5px;
+				}
+			}
+
+			&--#{$arrow}:hover::before {
+				background: sprite($site-sprite, arrow_#{$arrow}_blue) no-repeat;
+			}
+
+		}
+		&--act,
+		&:hover:not(span) {
+			background: #01a3d4;
+			color: #fff;
+		}
+	}
+
+}
+
+.bordered {
+	border-bottom: 1px solid #dadada;
+	padding-bottom: 24px;
 }

@@ -1,0 +1,36 @@
+.footer {
+	background: $bkg-footer;
+	padding: 25px 0;
+	&__item {
+		@include font(16, 28);
+		color: #666;
+		@each $i in left, right {
+			&--#{$i} {
+				text-align: $i;
+			}
+		}
+	}
+	.soc {
+		line-height: 30px;
+		&__item {
+			font-size: 0;
+			line-height: 0;
+			vertical-align: middle;
+			&::before {
+				content: ".";
+				width: 42px;
+				height: 36px;
+				display: inline-block;
+			}
+			@each $i in vk, fb {
+				&--#{$i}::before {
+					background: sprite($site-sprite, soc_#{$i});
+				}
+			}
+		}
+	}
+	a[href^="mailto"]{
+		@include link(#73931f);
+		line-height: 1em;
+	}
+}

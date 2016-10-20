@@ -12,22 +12,22 @@
 		<header class="container">
 			<div class="row">
 				<div class="col-xs-3">
-					<div class="logo"><img src="images/logo.png" alt=""></div>
+					<a href="/" class="logo"><img src="images/logo.png" alt=""></a>
 				</div>
 				<div class="col-xs-9">
 					<div class="top-panel">
-						<div class="top-panel__lang">
-							<a href="#">portuguese</a>
-							<a href="#">english</a>
-							<a href="#">russian</a>
+						<div class="top-panel__item lang">
+							<a href="#" class="lang__item lang__item--rus">russian</a>
+							<a href="#" class="lang__item lang__item--eng">english</a>
+							<a href="#" class="lang__item lang__item--por">portuguese</a>
 						</div>
-						<div class="top-panel__nav">
-							<a href="#">home</a>
-							<a href="#">mail</a>
-							<a href="#">search</a>
-							<a href="#">options</a>
+						<div class="top-panel__item nav">
+							<a href="#"class="nav__item nav__item--home">home</a>
+							<a href="#"class="nav__item nav__item--mail">mail</a>
+							<a href="#"class="nav__item nav__item--search">search</a>
+							<a href="#"class="nav__item nav__item--options">options</a>
 						</div>
-						<div class="top-panel__serch">
+						<div class="top-panel__item  search">
 								<form action="/search/" method="get">
 									<input class="search__input" type="text" name="q" placeholder="Введите строку для поиска">
 									<input class="search__submit" type="image" src="images/search.png" alt="Найти">
@@ -36,7 +36,19 @@
 					</div>
 					<nav>
 						<ul class="site-nav">
-							<li class="site-nav__item"><a href="" class="site-nav__link"><span>О компании</span></a></li>
+							<li class="site-nav__item"><a href="" class="site-nav__link"><span>О компании</span></a>
+								<ul class="dropdown dropdown__closed">
+									<li class="dropdown__item"><a href="">
+										<span>Команда</span></a>
+									</li>
+									<li class="dropdown__item"><a href="">
+										<span>Партнеры</span></a>
+									</li>
+									<li class="dropdown__item"><a href="">
+										<span>Патенты </span></a>
+									</li>
+								</ul>
+							</li>
 							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Технологии </span></a></li>
 							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Решения </span></a></li>
 							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Окружающая среда</span></a></li>
@@ -54,37 +66,58 @@
 				<div class="slider">
 					<div class="slider__item">
 						<img src="images/slider1.jpg" alt="">
-						<div class="slider__head">Одностадийный<br />способ получения<br />бутадиена</div>
-						<a href="#" class="slider__link">узнать больше о технологии</a>
+						<div class="container slider__inner">
+							<div class="slider__head">Одностадийный<br />способ получения<br />бутадиена
+								<div>
+									<a href="#">узнать больше о технологии</a>
+								</div>
+							</div>
+							<button class="arrow left">previos</button>
+							<button class="arrow right">next</button>
+						</div>
 					</div>
 					<div class="slider__item">
 						<img src="images/slider2.jpg" alt="">
-						<div class="slider__head">Энергоэффективность.<br />Скорость.<br />Качество.</div>
-						<a href="#" class="slider__link">узнать больше о решениях</a>
+						<div class="container slider__inner">
+							<div class="slider__head">Энергоэффективность.<br />Скорость.<br />Качество.
+								<div>
+									<a href="#">узнать больше о решениях</a>
+								</div>
+							</div>
+							<button class="arrow left">previos</button>
+							<button class="arrow right">next</button>
+						</div>
 					</div>
 					<div class="slider__item">
 						<img src="images/slider3.jpg" alt="">
-						<div class="slider__head">Технология, <br />позволяющая сохранять <br />окружающую среду</div>
-						<a href="#" class="slider__link">узнать больше об окружающей среде</a>
+						<div class="container slider__inner">
+							<div class="slider__head">Технология, <br />позволяющая сохранять <br />окружающую среду
+								<div>
+									<a href="#">узнать больше об окружающей среде</a>
+								</div>
+							</div>
+							<button class="arrow left">previos</button>
+							<button class="arrow right">next</button>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<!--  ABOUT  -->
 			<div class="container block">
-				<h2>О компании</h2>
+				<h2><a href="#">О компании</a></h2>
 				<p>Супермолекула закономерна. Бертолетова соль полимеризует сахар. Температура растворимо окисляет триплетный сахар. Сернистый газ затрудняет фрагментарный бензол. При осуществлении искусственных ядерных реакций было доказано, что пламя ядовито. Благодаря открытию радиоактивности ученые окончательно убедились, что растворение заставляет имидазол, но здесь диспергированные частицы исключительно малы.</p>
 				<p>Енамин, при явном изменении параметров Рака, разъедает органический серный эфир. Пластмасса возбуждает гетерогенный нуклеофил. Бюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера. Сворачивание, как можно показать с помощью не совсем тривиальных вычислений, энергично. Окисление, если рассматривать процессы в рамках специальной теории относительности, испускает ионообменник, поскольку изоморфная кристаллизация с перманганатом рубидия невозможна. Скорость реакции нейтрализует полимолекулярный ассоциат.</p>
 			</div>
 
 			<div class="presentation block">
 				<div class="container">
-					<div class="white-title">«ЭТБ Каталитические технологии» — это:</div>
-					<div class="presentation__item">
-						<div class="txt"><span>Надежный партнер </span>Резидент крупнейшего российского научно-технологического комплекса «Сколково».</div>
+					<div class="white-title"><span>«ЭТБ Каталитические технологии»</span> — это:</div>
+					<div class="presentation__item" data-pic="1">
+						<div class="presentation__txt"><span>Надежный партнер </span>Резидент крупнейшего российского научно-технологического комплекса «Сколково».</div>
 					</div>
-					<div class="presentation__item">
-						<div class="txt"><span>Опытная команда </span>Научные сотрудники МГУ, консультанты крупнейших глобальных компаний.</div>
+					<div class="presentation__item" data-pic="2">
+						<div class="presentation__txt"><span>Опытная команда </span>Научные сотрудники МГУ, консультанты крупнейших глобальных компаний.</div>
 					</div>
 				</div>
 			</div>
@@ -93,123 +126,171 @@
 				<div class="row">
 					<div class="col-xs-5"><img src="images/advantages.jpg" alt=""></div>
 					<div class="col-xs-7">
-						<div class="h2"></div>
+						<div class="h2"><a href="#">Преимущества нашего метода</a></div>
 						<ul class="advantages">
-							<li class="advantages__item">Использование возобновляемого<br />источника сырья</li>
-							<li class="advantages__item">Значительное повышение селективности образования бутадиена (более 80%)</li>
-							<li class="advantages__item">Сокращение<br />удельных энергозатрат</li>
+							<li class="advantages__item" data-num="1">Использование возобновляемого<br />источника сырья</li>
+							<li class="advantages__item" data-num="2">Значительное повышение селективности образования бутадиена (более 80%)</li>
+							<li class="advantages__item" data-num="3">Сокращение<br />удельных энергозатрат</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 
-			<div class="slider-bottom-wrapper block">
-				<div class="white-title">Международные патенты на уникальную технологию</div>
-				<div class="slider-bottom">
-					<div class="slider-bottom__item">
-						<img src="images/patent.jpg" alt="">
+			<div class="slider-bottom-outer block">
+				<div class="slider-bottom-wrapper container">
+					<div class="white-title">Международные патенты на уникальную технологию</div>
+					<div class="slider-bottom">
+						<div class="slider-bottom__item">
+							<img src="images/patent.jpg" alt="">
+						</div>
+						<div class="slider-bottom__item">
+							<img src="images/patent.jpg" alt="">
+						</div>
+						<div class="slider-bottom__item">
+							<img src="images/patent.jpg" alt="">
+						</div>
+						<div class="slider-bottom__item">
+							<img src="images/patent.jpg" alt="">
+						</div>
+						<div class="slider-bottom__item">
+							<img src="images/patent.jpg" alt="">
+						</div>
+						<div class="slider-bottom__item">
+							<img src="images/patent.jpg" alt="">
+						</div>
 					</div>
-					<div class="slider-bottom__item">
-						<img src="images/patent.jpg" alt="">
-					</div>
-					<div class="slider-bottom__item">
-						<img src="images/patent.jpg" alt="">
-					</div>
-					<div class="slider-bottom__item">
-						<img src="images/patent.jpg" alt="">
-					</div>
-					<div class="slider-bottom__item">
-						<img src="images/patent.jpg" alt="">
-					</div>
-					<div class="slider-bottom__item">
-						<img src="images/patent.jpg" alt="">
-					</div>
+					<button class="arrow prev">previos</button>
+					<button class="arrow next">next</button>
 				</div>
 			</div>
 
-			<div class="container team block">
+			<div class="container block">
+				<div class="h2">Команда</div>
 				<div class="row">
 					<div class="col-xs-4">
-						<img src="images/face.jpg" alt="">
-						<div class="team__name">Владимир Трембовольский</div>
-						<div class="team__post">Генеральный Директор</div>
+						<div class="team">
+							<div class="team__photo">
+								<img src="images/face.jpg" alt="">
+							</div>
+							<div class="team__name">Владимир Трембовольский</div>
+							<div class="team__post">Генеральный Директор</div>
+						</div>
 					</div>
 					<div class="col-xs-4">
-						<img src="images/face.jpg" alt="">
-						<div class="team__name">Владимир Трембовольский</div>
-						<div class="team__post">Генеральный Директор</div>
+						<div class="team">
+							<div class="team__photo">
+								<img src="images/advantages.jpg" alt="">
+							</div>
+							<div class="team__name">Владимир Трембовольский</div>
+							<div class="team__post">Генеральный Директор</div>
+						</div>
 					</div>
 					<div class="col-xs-4">
-						<img src="images/face.jpg" alt="">
-						<div class="team__name">Владимир Трембовольский</div>
-						<div class="team__post">Генеральный Директор</div>
+						<div class="team">
+							<div class="team__photo">
+								<img src="images/blue.jpg" alt="">
+							</div>
+							<div class="team__name">Владимир Трембовольский</div>
+							<div class="team__post">Генеральный Директор</div>
+						</div>
 					</div>
 					<div class="col-xs-4">
-						<img src="images/face.jpg" alt="">
-						<div class="team__name">Владимир Трембовольский</div>
-						<div class="team__post">Генеральный Директор</div>
+						<div class="team">
+							<div class="team__photo">
+								<img src="images/face.jpg" alt="">
+							</div>
+							<div class="team__name">Владимир Трембовольский</div>
+							<div class="team__post">Генеральный Директор</div>
+						</div>
 					</div>
 					<div class="col-xs-4">
-						<img src="images/face.jpg" alt="">
-						<div class="team__name">Владимир Трембовольский</div>
-						<div class="team__post">Генеральный Директор</div>
+						<div class="team">
+							<div class="team__photo">
+								<img src="images/face.jpg" alt="">
+							</div>
+							<div class="team__name">Владимир Трембовольский</div>
+							<div class="team__post">Генеральный Директор</div>
+						</div>
 					</div>
 					<div class="col-xs-4">
-						<img src="images/face.jpg" alt="">
-						<div class="team__name">Владимир Трембовольский</div>
-						<div class="team__post">Генеральный Директор</div>
+						<div class="team">
+							<div class="team__photo">
+								<img src="images/face.jpg" alt="">
+							</div>
+							<div class="team__name">Владимир Трембовольский</div>
+							<div class="team__post">Генеральный Директор</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="container block news">
+			<div class="container block">
 				<div class="h2">Новости</div>
-				<div class="col-xs-4">
-					<div class="news__date">12 августа 2016</div>
-					<div class="news__img"><img src="images/news_1.jpg" alt=""><span>условная<br />иллюстрация<br />к новости</span></div>
-					<a href="" class="news__title">Заголовок новости является ссылкой и может занимать несколько строк</a>
-					<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
-				</div>
-				<div class="col-xs-4">
-					<div class="news__date">12 августа 2016</div>
-					<div class="news__img"><img src="images/news_2.jpg" alt=""><span>условная<br />иллюстрация<br />к новости</span></div>
-					<a href="" class="news__title">Заголовок новости является ссылкой и может занимать несколько строк</a>
-					<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
-				</div>
-				<div class="col-xs-4">
-					<div class="news__date">12 августа 2016</div>
-					<div class="news__img"><img src="images/news_3.jpg" alt=""><span>условная<br />иллюстрация<br />к новости</span></div>
-					<a href="" class="news__title">Заголовок новости является ссылкой и может занимать несколько строк</a>
-					<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="news">
+							<div class="news__date">12 августа 2016</div>
+							<div class="news__img"><img src="images/news_1.jpg" alt=""><div class="txt">
+								<span>условная<br />иллюстрация<br />к новости</span>
+							</div></div>
+							<a href="#" class="head-link">Заголовок новости является ссылкой и может занимать несколько строк</a>
+							<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="news">
+							<div class="news__date">12 августа 2016</div>
+							<div class="news__img"><img src="images/news_2.jpg" alt=""><div class="txt">
+								<span>условная<br />иллюстрация<br />к новости</span>
+							</div></div>
+							<a href="#" class="head-link">Заголовок новости является ссылкой и может занимать несколько строк</a>
+							<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="news">
+							<div class="news__date">12 августа 2016</div>
+							<div class="news__img">
+								<img src="images/news_3.jpg" alt="">
+								<div class="txt">
+									<span>условная<br />иллюстрация<br />к новости</span>
+								</div>
+							</div>
+							<a href="#" class="head-link">Заголовок новости является ссылкой и может занимать несколько строк</a>
+							<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-xs-4 col-xs-offset-4">
-					<a class="btn">все новости</a>
+					<a href="#" class="btn">все новости</a>
 				</div>
 			</div>
 
 			<div class="map">
-				<img src="images/tmp_map.jpg" alt="">
+				<img style="width: 100%" src="images/tmp_map.jpg" alt="">
 			</div>
 
 		<!-- FOOTER -->
 		</div>
-		<footer>
+		<footer class="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-6">
-						121205, Москва, Россия,<br />
-						территория инновационного центра Сколково,<br />
-						ул. Нобеля, д. 7.<br />
-						+7 (495) 005-9382, <a href="mailto:info@etbcat.com">info@etbcat.com</a>
+						<div class="footer__item footer__item--left">
+							121205, Москва, Россия,<br />
+							территория инновационного центра Сколково,<br />
+							ул. Нобеля, д. 7.<br />
+							+7 (495) 005-9382, <a href="mailto:info@etbcat.com">info@etbcat.com</a>
+						</div>
 					</div>
 					<div class="col-xs-6">
-						<div class="soc">
-							<a href="#" class="soc__fb">facebook</a>
-							<a href="#" class="soc__vk">vk</a>
-						</div>
-						© 2016 ООО «ЭТБ каталитические технологии»<br />
-						Все права защищены<br />
-						© Разработка сайта и дизайн «Инфодизайн» 2016
+						<div class="footer__item footer__item--right"><div class="soc">
+								<a href="#" class="soc__item soc__item--fb">facebook</a>
+								<a href="#" class="soc__item soc__item--vk">vk</a>
+							</div>
+							© 2016 ООО «ЭТБ каталитические технологии»<br />
+							Все права защищены<br />
+							© Разработка сайта и дизайн «Инфодизайн» 2016</div>
 					</div>
 				</div>
 			</div>

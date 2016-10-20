@@ -5,6 +5,7 @@ $default-font: $open-sans;
 $base-font-size: 15;
 $base-line-height: 26;
 $default-color: #545454;
+$black: #333;
 
 $link: #01a3d4;
 $link-hov: darken($link, 15%);
@@ -13,9 +14,10 @@ $header: #40484b;
 
 /* Colors */
 $grey: #777;
+$soft-grey: #999;
 $bkg-grey: #e1e1e1;
 $bkg-footer: #e9f6fa;
 
 /* Compass */
 
-//$cubs: sprite-map("../images/cubs/*.png");
+$site-sprite: sprite-map("../images/src/*.png");

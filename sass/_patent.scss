@@ -1,0 +1,17 @@
+.patent {
+	margin: 17px 0 40px;
+	.head-link {
+		margin-top: 10px;
+	}
+	&__txt {
+		height: 100%;
+		display: table;
+		span {
+			display: table-cell;
+			vertical-align: middle;
+			@include font(20,26,700);
+			color: #999;
+			text-align: center;
+		}
+	}
+}

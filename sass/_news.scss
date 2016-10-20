@@ -1,0 +1,45 @@
+.manager {
+	padding: 0 12px 17px;
+	background: #e9f6fa;
+	overflow: hidden;
+	margin-bottom: 25px;
+	&__name {
+		color: $header;
+		@include font(18, 20, 700);
+		margin: 15px 0 5px;
+	}
+	&__post {
+		@include font(14, 20);
+		margin-bottom: 12px;
+	}
+	&__phone {
+		padding-right: 5px;
+	}
+	&__phone,
+	&__mail {
+		@include font(14, 20);
+		display: inline-block;
+		a{
+			line-height: 0.9em;
+		}
+	}
+
+
+}
+.announce {
+	background: #edfae9;
+	font-size: 13.5px;
+	padding: 0 12px;
+	overflow: hidden;
+	h2, .h3 {
+		@include font(20, 24, 700, 13.5);
+	}
+	.head-link {
+		&:hover {
+			color: #477000;
+			&::after {
+				background: #b7e3aa;
+			}
+		}
+	}
+}

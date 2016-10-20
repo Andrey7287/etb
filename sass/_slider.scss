@@ -1,0 +1,72 @@
+.slider-wrapper,
+.slider-bottom-wrapper {
+	position: relative;
+}
+.slider {
+	&__item {
+		position: relative;
+	}
+	&__inner {
+		position: absolute;
+		top: 9%;
+		left: calc(50% - 485px);
+		bottom: 9%;
+	}
+	img {
+		width: 100%;
+	}
+	&__head {
+		@include font(48, 54, 600);
+		color: #3f474a;
+		text-transform: uppercase;
+		margin-left: 77px;
+		a {
+			@include link(#40484b, #005771);
+			@include font(20, 26, 400, 48);
+
+			display: inline-block;
+			margin-top: 20px;
+			position: relative;
+			&::after {
+				content: ".";
+				text-indent: -99999px;
+				display: inline-block;
+				width: 22px;
+				height: 7px;
+				background: sprite($site-sprite, link-arrow);
+				position: absolute;
+				top: 12px;
+				right: -33px;
+			}
+		}
+	}
+}
+.slider-bottom {
+	padding: 0 30px 0 40px;
+}
+.arrow {
+	position: absolute;
+	text-indent: -99999px;
+	width: 20px;
+	height: 52px;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	top: calc(50% - 26px);
+	&.left,
+	&.prev {
+		left: 13px;
+		background: sprite($site-sprite, arrow_left);
+	}
+	&.right,
+	&.next {
+		right: 13px;
+		background: sprite($site-sprite, arrow_right);
+	}
+	&.prev,
+	&.next {
+		top: 245px;
+	}
+}
+
+

@@ -1,0 +1,80 @@
+header{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	.logo {
+		margin-top: 40px;
+	}
+	nav {
+		margin-top: 36px;
+	}
+}
+.top-panel {
+	@include clearfix;
+	&__item {
+		float: right;
+	}
+	.lang {
+		line-height: 30px;
+		&__item {
+			font-size: 0;
+			line-height: 0;
+			margin-left: 20px;
+			vertical-align: middle;
+			&::before {
+				content: ".";
+				width: 25px;
+				height: 17px;
+				display: inline-block;
+			}
+			@each $lang in por, eng, rus {
+				&--#{$lang}::before {
+					background: sprite($site-sprite, flag_#{$lang});
+				}
+			}
+		}
+	}
+	.nav {
+		line-height: 30px;
+		&__item {
+			font-size: 0;
+			line-height: 0;
+			margin-right: 10px;
+			vertical-align: middle;
+			&::before {
+				content: ".";
+				width: 11px;
+				height: 10px;
+				display: inline-block;
+			}
+			@each $opt in home, mail, search, options {
+				&--#{$opt}::before {
+					background: sprite($site-sprite, site_#{$opt});
+				}
+			}
+		}
+	}
+	.search {
+		margin-right: 30px;
+		padding-right: 30px;
+		width: calc(100% - 270px);
+		position: relative;
+		&__input {
+			width: 100%;
+			border: 0;
+			border-bottom: 1px solid #e3e3e3;
+			color: $soft-grey;
+			padding: 0 10px;
+			@include font(12, 26);
+			margin-right: 10px;
+			&:focus {
+				outline: none;
+			}
+		}
+		&__submit {
+			position: absolute;
+			top: calc(50% - 10px);
+			right: 0;
+		}
+	}
+}
+
