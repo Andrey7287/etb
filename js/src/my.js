@@ -10,6 +10,7 @@
 		$cols.height(maxH);
 	};
 	$('.patent').ravno();
+	$('.partner__txt').ravno();
 
 	$('.slider').slick({
 		prevArrow: $('.left'),
