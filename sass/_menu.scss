@@ -30,10 +30,8 @@ $menu-height: 34px;
 				background: $menu-hov;
 			}
 		}
-		&--active {
-			a {
+		&--act {
 				background: $menu-hov;
-			}
 		}
 	}
 	.dropdown {
@@ -53,8 +51,6 @@ $menu-height: 34px;
 			text-align: center;
 			height: $menu-height;
 			transition: background 0.3s;
-			width: 200px;
-			border-top: 1px solid #fff;
 			a {
 				text-decoration: none;
 				display: table;
@@ -88,14 +84,29 @@ $menu-height: 34px;
 	@include font(14, 24);
 	&__item {
 		border-bottom: 1px solid #b5e9fa;
-		&:hover {
-			border-bottom: 1px solid $menu-hov;
+		a {
+			color: $black;
+		}
+		&:hover,
+		&--act {
+			a {
+				color: #fff;
+			}
 		}
 	}
-	a {
-		color: $black;
-		&:hover {
-			color: #fff;
+	.dropdown {
+		&__item {
+			border-top: 1px solid #fff;
+			width: 200px;
+			a {
+				color: $black;
+			}
+			&:hover,
+			&--act {
+				a {
+					color: #fff;
+				}
+			}
 		}
 	}
 

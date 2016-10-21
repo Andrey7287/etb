@@ -17,6 +17,7 @@ body, p {
 }
 p {
 	@include font;
+	text-align: justify;
 	&:first-of-type {
 		margin: 0;
 	}
@@ -45,6 +46,7 @@ a {
 	color: $link;
 	transition: 0.3s;
 	text-decoration: none;
+	display: inline-block;
 	&:hover,
 	&:focus {
 		color: darken($link, 15%);

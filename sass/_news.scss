@@ -51,8 +51,8 @@
 		content: ".";
 		font-size: 0;
 		line-height: 0;
-		width: 51px;
-		height: 38px;
+		width: 67px;
+		height: 116px;
 		display: block;
 		position: absolute;
 		top: 7px;;
@@ -63,6 +63,7 @@
 
 .back{
 	text-align: right;
+	margin-bottom: 15px;
 	&__item {
 		position: relative;
 		&::before {
