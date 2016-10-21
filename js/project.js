@@ -109,6 +109,9 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 	};
 
 	$('.site-nav__item').hover(openMenu, closeMenu);
-	$('.dropdowm').hover()
+	$('.dropdowm').hover();
+
+
+
 })($);
 /*MY SCRIPTS END*/

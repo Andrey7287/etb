@@ -39,6 +39,9 @@
 	};
 
 	$('.site-nav__item').hover(openMenu, closeMenu);
-	$('.dropdowm').hover()
+	$('.dropdowm').hover();
+
+
+
 })($);
 /*MY SCRIPTS END*/
