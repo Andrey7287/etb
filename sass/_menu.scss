@@ -24,12 +24,9 @@ $menu-height: 34px;
 				text-align: center;
 				display: table-cell;
 				vertical-align: middle;
-				white-space: nowrap;
-			}
-			&:hover  {
-				background: $menu-hov;
 			}
 		}
+		&:hover,
 		&--act {
 				background: $menu-hov;
 		}
@@ -43,13 +40,11 @@ $menu-height: 34px;
 		display: table-cell;
 		vertical-align: middle;
 		text-align: center;
-		height: $menu-height;
 		transition: all 0.3s;
 		&__item {
 			position: relative;
 			background: $menu-bkg-inner;
 			text-align: center;
-			height: $menu-height;
 			transition: background 0.3s;
 			a {
 				text-decoration: none;
@@ -60,7 +55,6 @@ $menu-height: 34px;
 					padding: 0 10px;
 					display: table-cell;
 					vertical-align: middle;
-					white-space: nowrap;
 					text-align: left;
 				}
 				&:hover  {
@@ -81,11 +75,12 @@ $menu-height: 34px;
 
 .site-nav {
 	@include nav;
-	@include font(14, 24);
+	@include font(14, 16);
 	&__item {
 		border-bottom: 1px solid #b5e9fa;
 		a {
 			color: $black;
+			white-space: nowrap;
 		}
 		&:hover,
 		&--act {
@@ -97,9 +92,11 @@ $menu-height: 34px;
 	.dropdown {
 		&__item {
 			border-top: 1px solid #fff;
-			width: 200px;
+			width:  400px;
 			a {
 				color: $black;
+				white-space: normal;
+				padding: 9px 0;
 			}
 			&:hover,
 			&--act {
