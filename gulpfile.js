@@ -2,10 +2,12 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var compass = require('gulp-compass');
-
+var plumber = require('gulp-plumber');
+var notify = require("gulp-notify");
 
 gulp.task('compass', function() {
 	gulp.src('./sass/*.scss')
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(compass({
 			config_file: './config.rb',
 			css: './',

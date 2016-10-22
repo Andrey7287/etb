@@ -1,33 +1,35 @@
 {
-	"name": "etb",
-	"version": "1.0.0",
-	"description": "description here",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \\\"Error: no test specified\\\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Andrey7287/etb.git"
-	},
-	"keywords": [
-		"-"
-	],
-	"author": "Alekseev.A",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/Andrey7287/etb/issues"
-	},
-	"homepage": "https://github.com/Andrey7287/etb#readme",
-	"devDependencies": {
-		"bootstrap-sass": "^3.3.6",
-		"browser-sync": "^2.13.0",
-		"gulp": "^3.9.1",
-		"gulp-compass": "^2.1.0",
-		"gulp-concat": "^2.6.0",
-		"jquery": "^3.0.0",
-		"jquery-fancybox": "^3.0.0",
-		"normalize.scss": "^0.1.0",
-		"slick-carousel": "^1.6.0"
-	}
+  "name": "etb",
+  "version": "1.0.0",
+  "description": "description here",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrey7287/etb.git"
+  },
+  "keywords": [
+    "-"
+  ],
+  "author": "Alekseev.A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrey7287/etb/issues"
+  },
+  "homepage": "https://github.com/Andrey7287/etb#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "jquery": "^3.0.0",
+    "jquery-fancybox": "^3.0.0",
+    "normalize.scss": "^0.1.0",
+    "slick-carousel": "^1.6.0"
+  }
 }
