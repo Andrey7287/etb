@@ -1,6 +1,6 @@
 /*GREEN banner*/
 .presentation {
-	padding: 38px 0;
+	padding: 15px 0;
 	height: 304px;
 	background: url(images/banner.jpg) 50% 0 no-repeat;
 	color: #fff;
@@ -8,6 +8,9 @@
 		margin: 30px 0;
 		padding-left: 70px;
 		position: relative;
+		@include breakpoint(mobile) {
+			margin: 15px 0;
+		}
 		@each $i in 1, 2 {
 			&[data-pic="#{$i}"]::before {
 				position: absolute;
@@ -25,9 +28,15 @@
 	}
 	.white-title {
 		margin-bottom: 44px;
+		@include breakpoint(mobile) {
+			margin-bottom: 20px;
+		}
 	}
 	&__txt {
 		@include font(20, 24);
+		@include breakpoint(mobile) {
+			@include font(15, 20);
+		}
 		span {
 			font-weight: 700;
 			display: block;
@@ -35,6 +44,12 @@
 	}
 }
 /*ordered list*/
+.advantages-pict {
+	padding-top: 60px;
+	img {
+		width: 100%;
+	}
+}
 .advantages {
 	margin: 0;
 	padding: 0;
@@ -42,8 +57,12 @@
 	&__item {
 		padding-left: 80px;
 		position: relative;
-		@include font(20,26);
 		margin: 22px 0 49px;
+		@include font(20,26);
+		@include breakpoint(tablet) {
+			@include font(18,26);
+			margin: 30px 0 34px;
+		}
 		&::before {
 			content: attr(data-num);
 			display: block;
@@ -60,19 +79,18 @@
 		}
 	}
 }
-/*bottom slider*/
-.slider-bottom-outer {
-	height: 465px;
-	background: url(images/blue.jpg) 50% 0 no-repeat;
-	.white-title {
-		margin: 55px 0 40px;
-	}
-}
+
 /*TEAM*/
 .team {
 	margin: 20px 0 60px;
+	@include breakpoint(tablet) {
+		margin: 20px 0 20px;
+	}
 	&__photo{
 		height: 294px;
+		@include breakpoint(tablet) {
+			height: 220px;
+		}
 		border-radius: 1000px;
 		overflow: hidden;
 		margin-bottom: 15px;
@@ -122,6 +140,9 @@
 	&__img {
 		position: relative;
 		margin: 7px 0 23px;
+		img {
+			width: 100%;
+		}
 		.txt {
 			position: absolute;
 			top: 0;
@@ -130,6 +151,9 @@
 			height: 100%;
 			text-align: center;
 			padding: 50px 0;
+			@include breakpoint(tablet) {
+				padding: 25px 0;
+			}
 			span {
 				@include font(24,26,700);
 				color: #fff;

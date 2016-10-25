@@ -18,6 +18,9 @@ body, p {
 p {
 	@include font;
 	text-align: justify;
+	@include breakpoint(mobile){
+		@include font(13, 22);
+	}
 	&:first-of-type {
 		margin: 0;
 	}
@@ -26,6 +29,14 @@ p {
 .block {
 	margin-top: 45px;
 	margin-bottom: 45px;
+	@include breakpoint(tablet) {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+	@include breakpoint(mobile) {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
 }
 
 // Reset fonts for relevant elements
@@ -71,6 +82,11 @@ a {
 	}
 }
 
+a[href^="mailto"]{
+	@include link(#73931f);
+	line-height: 1em;
+}
+
 //NAV
 
 nav {
@@ -93,6 +109,9 @@ h2, .h2 {
 	@include font(30, 32, 700);
 	color: $header;
 	margin: 15px 0;
+	@include breakpoint(mobile){
+		@include font(20, 24, 700);
+	}
 	a {
 		color: $header;
 		text-decoration: none;
@@ -109,9 +128,12 @@ h3, .h3 {
 	margin: 10px 0;
 }
 .white-title {
-	@include font(30,24, 700);
+	@include font(30,36, 700);
 	color: #fff;
 	margin: 10px 0;
+	@include breakpoint(mobile){
+		@include font(20, 24, 700);
+	}
 	span {
 		border-bottom: 1px solid #6a8d55;
 	}

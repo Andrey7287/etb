@@ -1,15 +1,40 @@
 header{
 	margin-top: 10px;
 	margin-bottom: 20px;
+	@include breakpoint(mobile) {
+		margin-bottom: 0;
+	}
 	.logo {
-		margin-top: 40px;
+		margin-top: 35px;
+		img {
+			width: 100%;
+		}
+		@include breakpoint(tablet){
+			margin-top: 12px;
+			padding-right: 17px;
+		}
+		@include breakpoint(mobile){
+			margin: 10px auto 15px;
+			display: block;
+			width: 290px;
+		}
 	}
 	nav {
 		margin-top: 36px;
+		@include breakpoint(mobile) {
+			margin-top: 0;
+		}
 	}
 }
 .top-panel {
 	@include clearfix;
+	@include breakpoint(tablet) {
+		margin-top: 28px;
+	}
+	@include breakpoint(mobile) {
+		padding-top: 50px;
+		position: relative;
+	}
 	&__item {
 		float: right;
 	}
@@ -20,6 +45,9 @@ header{
 			line-height: 17px;
 			margin-left: 20px;
 			vertical-align: middle;
+			@include breakpoint(mobile) {
+				margin-left: 6px;
+			}
 			&::before {
 				content: ".";
 				width: 25px;
@@ -58,6 +86,17 @@ header{
 		padding-right: 30px;
 		width: calc(100% - 270px);
 		position: relative;
+		@include breakpoint(tablet) {
+			margin-right: 75px;
+			width: calc(100% - 487px);
+		}
+		@include breakpoint(mobile){
+			width: 100%;
+			margin-right: 0;
+			position: absolute;
+			top:0;
+			left:0;
+		}
 		&__input {
 			width: 100%;
 			border: 0;
@@ -69,11 +108,50 @@ header{
 			&:focus {
 				outline: none;
 			}
+			&:hover {
+				border-bottom: 1px solid #01a3d4;
+			}
 		}
 		&__submit {
 			position: absolute;
 			top: calc(50% - 10px);
 			right: 0;
+		}
+	}
+	.burger {
+		display: none;
+		line-height: 30px;
+		margin-right: 20px;
+		border-bottom: 1px solid #22bcf1;
+		a {
+			@include font(14,30);
+			color: $black;
+			position: relative;
+			padding-right: 20px;
+			border-radius: 5px;
+			padding: 0 23px 0 7px;
+			transition: none;
+			&::after {
+				content: ".";
+				font-size: 0;
+				display: block;
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				top: calc(50% - 7px);
+				right: 4px;
+				background: sprite($site-sprite, burger);
+			}
+			&:hover {
+				background: #01a3d4;
+				color: #fff;
+				&::after {
+					background: sprite($site-sprite, burger_hov);
+				}
+			}
+		}
+		@include breakpoint(mobile) {
+			display:block;
 		}
 	}
 }

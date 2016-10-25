@@ -13,24 +13,16 @@
 	@media (min-width: 992px) { @content; }
 	}
 	@if $point == tablet {
-	@media (min-width: 768px) and (max-width: 992px) { @content; }
-	}
-	@if $point == tablet-desktop {
-	@media (min-width: 768px) { @content; }
-	}
-	@if $point == all-small {
-		@media (max-width: 992px ) { @content; }
+	@media (min-width: 768px) and (max-width: 991px) { @content; }
 	}
 	@if $point == mobile {
-	@media (max-width: 767px ) { @content; }
+	@media (max-width: 767px) { @content; }
 	}
-	// Additional
-	@if $point == tablet-small {
-		@media (min-width: 426px) and (max-width: 767px) { @content; }
-	}
-	@if $point == mobile-small {
+	@if $point == small {
 		@media (max-width: 480px) { @content; }
 	}
+	//additional
+
 }
 
 @mixin font($size: $base-font-size, $height: $base-line-height, $weight: 400, $context: $base-font-size, $font: $default-font){

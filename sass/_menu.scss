@@ -6,21 +6,30 @@ $menu-height: 34px;
 @mixin nav {
 	display: table;
 	width: 100%;
-	&__item {
+	@include breakpoint(tablet) {
 		position: relative;
-		background: $menu-bkg;
+	}
+	@include breakpoint(mobile) {
+		display: none;
+	}
+	&__item {
+		@include breakpoint(desktop) {
+			position: relative;
+		}
 		display: table-cell;
 		vertical-align: middle;
 		text-align: center;
-		height: $menu-height;
 		transition: background 0.3s;
+		@include breakpoint(mobile){
+			display: list-item;
+		}
 		a {
 			text-decoration: none;
 			display: table;
 			width: 100%;
 			height: 100%;
+			padding: 10px;
 			span {
-				padding: 0 10px;
 				text-align: center;
 				display: table-cell;
 				vertical-align: middle;
@@ -28,7 +37,9 @@ $menu-height: 34px;
 		}
 		&:hover,
 		&--act {
+			a {
 				background: $menu-hov;
+			}
 		}
 	}
 	.dropdown {
@@ -41,12 +52,18 @@ $menu-height: 34px;
 		vertical-align: middle;
 		text-align: center;
 		transition: all 0.3s;
+		@include breakpoint(mobile){
+			position: static;
+			display: block;
+			transition: inherit;
+
+		}
 		&__item {
 			position: relative;
-			background: $menu-bkg-inner;
 			text-align: center;
 			transition: background 0.3s;
 			a {
+				background: $menu-bkg-inner;
 				text-decoration: none;
 				display: table;
 				width: 100%;
@@ -56,6 +73,9 @@ $menu-height: 34px;
 					display: table-cell;
 					vertical-align: middle;
 					text-align: left;
+					@include breakpoint(mobile) {
+						text-align: center;
+					}
 				}
 				&:hover  {
 					background: $menu-hov;
@@ -65,6 +85,11 @@ $menu-height: 34px;
 		&__closed {
 			opacity: 0;
 			z-index: -10;
+			@include breakpoint(mobile){
+				display: none;
+				opacity: 1;
+				z-index: 1200;
+			}
 		}
 		&__open {
 			opacity: 1;
@@ -90,9 +115,18 @@ $menu-height: 34px;
 		}
 	}
 	.dropdown {
+		width:  400px;
+		@include breakpoint(tablet){
+			width: 720px;
+			position: absolute;
+			top: 34px;
+			left: 0;
+		}
+		@include breakpoint(mobile) {
+			width: auto;
+		}
 		&__item {
 			border-top: 1px solid #fff;
-			width:  400px;
 			a {
 				color: $black;
 				white-space: normal;

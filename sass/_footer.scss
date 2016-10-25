@@ -9,6 +9,12 @@
 				text-align: $i;
 			}
 		}
+		&--right {
+			color: $soft-grey;
+			@include breakpoint(tablet){
+				@include font(14, 24);
+			}
+		}
 	}
 	.soc {
 		line-height: 30px;
@@ -16,6 +22,7 @@
 			font-size: 0;
 			line-height: 0;
 			vertical-align: middle;
+			position: relative;
 			&::before {
 				content: ".";
 				width: 42px;
@@ -27,10 +34,9 @@
 					background: sprite($site-sprite, soc_#{$i});
 				}
 			}
+			&--mousedown {
+				top: 5px;
+			}
 		}
-	}
-	a[href^="mailto"]{
-		@include link(#73931f);
-		line-height: 1em;
 	}
 }

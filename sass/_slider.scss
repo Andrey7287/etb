@@ -9,21 +9,43 @@
 	&__inner {
 		position: absolute;
 		top: 9%;
-		left: calc(50% - 485px);
 		bottom: 9%;
+		left: calc(50% - 485px);
+		@include breakpoint(tablet) {
+			left: calc(50% - 375px);
+		}
+		@include breakpoint(mobile) {
+			left: 0;
+			width: 100%;
+		}
+
 	}
 	img {
 		width: 100%;
+		@include breakpoint(mobile){
+			width: 160%;
+		}
 	}
 	&__head {
 		@include font(48, 54, 600);
+		@include breakpoint(tablet) {
+			@include font(42, 48, 600);
+		}
+		@include breakpoint(mobile){
+			@include font(25, 27, 600);
+		}
 		color: #3f474a;
 		text-transform: uppercase;
 		margin-left: 77px;
+		@include breakpoint(tablet) {
+			margin-left: 56px;
+		}
 		a {
 			@include link(#40484b, #005771);
 			@include font(20, 26, 400, 48);
-
+			@include breakpoint(mobile){
+				@include font(10, 12, 400, 25);
+			}
 			display: inline-block;
 			margin-top: 20px;
 			position: relative;
@@ -41,8 +63,30 @@
 		}
 	}
 }
+
+.slider-bottom-outer {
+	height: 465px;
+	@include breakpoint (tablet) {
+		height: 352px;
+	}
+	background: url(images/blue.jpg) 50% 0 no-repeat;
+	background-size: cover;
+	.white-title {
+		margin: 55px 0 40px;
+		@include breakpoint (tablet){
+			margin: 20px 62px 28px 0;
+		}
+	}
+}
+
 .slider-bottom {
 	padding: 0 30px 0 40px;
+	@include breakpoint(tablet) {
+		img {
+			width: 85%;
+		}
+	}
+
 }
 .arrow {
 	position: absolute;
@@ -53,6 +97,9 @@
 	border: 0;
 	line-height: 0;
 	top: calc(50% - 26px);
+	@include breakpoint(mobile){
+		display: none;
+	}
 	&.left,
 	&.prev {
 		left: 13px;
@@ -66,7 +113,11 @@
 	&.prev,
 	&.next {
 		top: 245px;
+		@include breakpoint(tablet){
+			top: 189px;
+		}
 	}
+
 }
 
 

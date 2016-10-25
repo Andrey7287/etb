@@ -11,15 +11,16 @@
 	<div class="body">
 		<header class="container">
 			<div class="row">
-				<div class="col-xs-3">
+				<div class="col-sm-3 col-xs-12">
 					<a href="/" class="logo"><img src="images/logo.png" alt=""></a>
 				</div>
-				<div class="col-xs-9">
+				<div class="visible-xs-block clearfix"></div>
+				<div class="col-md-9">
 					<div class="top-panel">
 						<div class="top-panel__item lang">
 							<a href="#" class="lang__item lang__item--rus">russian</a>
 							<a href="#" class="lang__item lang__item--eng">english</a>
-							<a href="#" class="lang__item lang__item--por">portuguese</a>
+							<a class="lang__item lang__item--por">portuguese</a>
 						</div>
 						<div class="top-panel__item nav">
 							<a href="#"class="nav__item nav__item--home">home</a>
@@ -33,8 +34,13 @@
 									<input class="search__submit" type="image" src="images/search.png" alt="Найти">
 								</form>
 						</div>
+						<div class="top-panel__item burger">
+							<a href="#">Меню</a>
+						</div>
 					</div>
-					<nav>
+
+
+					<nav id="mp-menu">
 						<ul class="site-nav">
 							<li class="site-nav__item site-nav__item--act"><a href="" class="site-nav__link"><span>О компании</span></a>
 								<ul class="dropdown dropdown__closed">
@@ -136,7 +142,9 @@
 
 			<div class="container block">
 				<div class="row">
-					<div class="col-xs-5"><img src="images/advantages.jpg" alt=""></div>
+					<div class="col-xs-5"><div class="advantages-pict">
+						<img src="images/advantages.jpg" alt="">
+					</div></div>
 					<div class="col-xs-7">
 						<div class="h2"><a href="#">Преимущества нашего метода</a></div>
 						<ul class="advantages">
@@ -153,22 +161,22 @@
 					<div class="white-title">Международные патенты на уникальную технологию</div>
 					<div class="slider-bottom">
 						<div class="slider-bottom__item">
-							<img src="images/patent.jpg" alt="">
+							<a href=""><img src="images/patent.jpg" alt=""></a>
 						</div>
 						<div class="slider-bottom__item">
-							<img src="images/patent.jpg" alt="">
+							<a href=""><img src="images/patent.jpg" alt=""></a>
 						</div>
 						<div class="slider-bottom__item">
-							<img src="images/patent.jpg" alt="">
+							<a href=""><img src="images/patent.jpg" alt=""></a>
 						</div>
 						<div class="slider-bottom__item">
-							<img src="images/patent.jpg" alt="">
+							<a href=""><img src="images/patent.jpg" alt=""></a>
 						</div>
 						<div class="slider-bottom__item">
-							<img src="images/patent.jpg" alt="">
+							<a href=""><img src="images/patent.jpg" alt=""></a>
 						</div>
 						<div class="slider-bottom__item">
-							<img src="images/patent.jpg" alt="">
+							<a href=""><img src="images/patent.jpg" alt=""></a>
 						</div>
 					</div>
 					<button class="arrow prev">previos</button>
@@ -282,26 +290,36 @@
 				<div id="map" class="map">
 
 				</div>
-				<div class="address">
+				<div class="address" id="mapContact">
 					<div class="address__txt">
-						asd
-						asd
-						asd
+						<div class="address__top">121205, Москва,<br />
+							Россия, территория<br />
+							инновационного центра<br />
+							Сколково, ул. Нобеля, д. 7</div>
+
+						<div class="address__bottom">
+							+7 (495) 005-9382<br />
+							<a href="mailto:info@etbcat.com">info@etbcat.com</a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrv1MXaXB9mvXQ2qAWL4W-ZYX2U4r5B3Y"></script>
 			<script>
 				function initMap() {
-					var center = {lat: 55.685973, lng: 37.339480};
-					var blueSqure = {lat: 55.68375, lng: 37.34281};
-					var octagon = {lat: 55.681204, lng: 37.3396};
+					var center = {lat: 55.685973, lng: 37.339480},
+						blueSqure = {lat: 55.68375, lng: 37.34281},
+						octagon = {lat: 55.681204, lng: 37.3396},
+						//for html overlay
+						myLatlng = new google.maps.LatLng(55.6901,37.323);
 
 					// Create a map object and specify the DOM element for display.
 					var map = new google.maps.Map(document.getElementById('map'), {
 						center: center,
 						scrollwheel: false,
 						zoom: 15,
-						"elementType": "geometry.fill"
+						"elementType": "geometry.fill",
+						disableDefaultUI: true
 					});
 					// Create a markers and set its position.
 					//blue squre
@@ -316,7 +334,7 @@
 						position: octagon,
 						icon: 'images/map/octagon.png'
 					});
-
+					//Styles
 					var styles = [
 						{
 							"elementType": "geometry.fill",
@@ -328,11 +346,18 @@
 						}
 					];
 					map.setOptions({styles: styles});
+					//Html overlay
+					overlay = new CustomMarker(
+						'mapContact',
+						myLatlng,
+						map,
+						{
+							marker_id: 'contact'
+						}
+					);
 				}
-
+				google.maps.event.addDomListener(window, 'load', initMap);
 			</script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrv1MXaXB9mvXQ2qAWL4W-ZYX2U4r5B3Y&callback=initMap"
-		async defer></script>
 
 		<!-- FOOTER -->
 		</div>
@@ -342,19 +367,21 @@
 					<div class="col-xs-6">
 						<div class="footer__item footer__item--left">
 							121205, Москва, Россия,<br />
-							территория инновационного центра Сколково,<br />
+							территория инновационного центра Сколково,
 							ул. Нобеля, д. 7.<br />
 							+7 (495) 005-9382, <a href="mailto:info@etbcat.com">info@etbcat.com</a>
 						</div>
 					</div>
 					<div class="col-xs-6">
-						<div class="footer__item footer__item--right"><div class="soc">
+						<div class="footer__item footer__item--right">
+							<div class="soc">
 								<a href="#" class="soc__item soc__item--fb">facebook</a>
 								<a href="#" class="soc__item soc__item--vk">vk</a>
 							</div>
 							© 2016 ООО «ЭТБ каталитические технологии»<br />
 							Все права защищены<br />
-							© Разработка сайта и дизайн «Инфодизайн» 2016</div>
+							© Разработка сайта и дизайн «Инфодизайн» 2016
+						</div>
 					</div>
 				</div>
 			</div>

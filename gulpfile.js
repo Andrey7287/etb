@@ -17,7 +17,7 @@ gulp.task('compass', function() {
 });
 
 gulp.task('concat', function(){
-	return gulp.src(['./js/src/jquery.min.js', './js/src/jquery.fancybox.pack.js', './js/src/slick.min.js', './js/src/my.js'])
+	return gulp.src(['./js/src/jquery.min.js', './js/src/jquery.fancybox.pack.js', './js/src/slick.min.js', './js/src/CustomGoogleMapMarker.js', './js/src/my.js'])
 	.pipe(concat('./js/project.js'))
 	.pipe(gulp.dest('./'))
 });
