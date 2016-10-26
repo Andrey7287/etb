@@ -132,7 +132,7 @@ h3, .h3 {
 	color: #fff;
 	margin: 10px 0;
 	@include breakpoint(mobile){
-		@include font(20, 24, 700);
+		@include font(19, 24, 700);
 	}
 	span {
 		border-bottom: 1px solid #6a8d55;
@@ -155,6 +155,9 @@ h3, .h3 {
 	text-decoration: none;
 	position: relative;
 	margin-bottom: 33px;
+	@include breakpoint (mobile) {
+		@include font(16,22);
+	}
 	&::after {
 		content: ".";
 		font-size: 0;

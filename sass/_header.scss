@@ -123,6 +123,9 @@ header{
 		line-height: 30px;
 		margin-right: 20px;
 		border-bottom: 1px solid #22bcf1;
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
 		a {
 			@include font(14,30);
 			color: $black;

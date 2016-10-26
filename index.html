@@ -35,12 +35,12 @@
 								</form>
 						</div>
 						<div class="top-panel__item burger">
-							<a href="#">Меню</a>
+							<a href="#" id="toggleBurger">Меню</a>
 						</div>
 					</div>
 
 
-					<nav id="mp-menu">
+					<nav id="siteMenu">
 						<ul class="site-nav">
 							<li class="site-nav__item site-nav__item--act"><a href="" class="site-nav__link"><span>О компании</span></a>
 								<ul class="dropdown dropdown__closed">
@@ -142,10 +142,10 @@
 
 			<div class="container block">
 				<div class="row">
-					<div class="col-xs-5"><div class="advantages-pict">
+					<div class="col-md-5 col-xs-12"><div class="advantages-pict">
 						<img src="images/advantages.jpg" alt="">
 					</div></div>
-					<div class="col-xs-7">
+					<div class="col-md-7 col-xs-12">
 						<div class="h2"><a href="#">Преимущества нашего метода</a></div>
 						<ul class="advantages">
 							<li class="advantages__item" data-num="1">Использование возобновляемого<br />источника сырья</li>
@@ -185,69 +185,73 @@
 			</div>
 
 			<div class="container block">
-				<div class="h2">Команда</div>
-				<div class="row">
-					<div class="col-xs-4">
-						<div class="team">
-							<div class="team__photo">
-								<img src="images/face.jpg" alt="">
+				<div class="team-outer">
+					<div class="h2">Команда</div>
+					<div class="row team-slider">
+						<div class="col-sm-4">
+							<div class="team">
+								<div class="team__photo">
+									<img src="images/face.jpg" alt="">
+								</div>
+								<div class="team__name">Владимир Трембовольский</div>
+								<div class="team__post">Генеральный Директор</div>
 							</div>
-							<div class="team__name">Владимир Трембовольский</div>
-							<div class="team__post">Генеральный Директор</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="team">
+								<div class="team__photo">
+									<img src="images/advantages.jpg" alt="">
+								</div>
+								<div class="team__name">Владимир Трембовольский</div>
+								<div class="team__post">Генеральный Директор</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="team">
+								<div class="team__photo">
+									<img src="images/blue.jpg" alt="">
+								</div>
+								<div class="team__name">Владимир Трембовольский</div>
+								<div class="team__post">Генеральный Директор</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="team">
+								<div class="team__photo">
+									<img src="images/face.jpg" alt="">
+								</div>
+								<div class="team__name">Владимир Трембовольский</div>
+								<div class="team__post">Генеральный Директор</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="team">
+								<div class="team__photo">
+									<img src="images/face.jpg" alt="">
+								</div>
+								<div class="team__name">Владимир Трембовольский</div>
+								<div class="team__post">Генеральный Директор</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="team">
+								<div class="team__photo">
+									<img src="images/face.jpg" alt="">
+								</div>
+								<div class="team__name">Владимир Трембовольский</div>
+								<div class="team__post">Генеральный Директор</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-xs-4">
-						<div class="team">
-							<div class="team__photo">
-								<img src="images/advantages.jpg" alt="">
-							</div>
-							<div class="team__name">Владимир Трембовольский</div>
-							<div class="team__post">Генеральный Директор</div>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="team">
-							<div class="team__photo">
-								<img src="images/blue.jpg" alt="">
-							</div>
-							<div class="team__name">Владимир Трембовольский</div>
-							<div class="team__post">Генеральный Директор</div>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="team">
-							<div class="team__photo">
-								<img src="images/face.jpg" alt="">
-							</div>
-							<div class="team__name">Владимир Трембовольский</div>
-							<div class="team__post">Генеральный Директор</div>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="team">
-							<div class="team__photo">
-								<img src="images/face.jpg" alt="">
-							</div>
-							<div class="team__name">Владимир Трембовольский</div>
-							<div class="team__post">Генеральный Директор</div>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="team">
-							<div class="team__photo">
-								<img src="images/face.jpg" alt="">
-							</div>
-							<div class="team__name">Владимир Трембовольский</div>
-							<div class="team__post">Генеральный Директор</div>
-						</div>
-					</div>
+					<button class="arrow left-person">previos</button>
+					<button class="arrow right-person">next</button>
 				</div>
 			</div>
 
 			<div class="container block">
 				<div class="h2">Новости</div>
 				<div class="row">
-					<div class="col-xs-4">
+					<div class="col-sm-4 col-xs-12">
 						<div class="news">
 							<div class="news__date">12 августа 2016</div>
 							<div class="news__img"><img src="images/news_1.jpg" alt=""><div class="txt">
@@ -257,7 +261,7 @@
 							<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
 						</div>
 					</div>
-					<div class="col-xs-4">
+					<div class="col-sm-4 col-xs-12">
 						<div class="news">
 							<div class="news__date">12 августа 2016</div>
 							<div class="news__img"><img src="images/news_2.jpg" alt=""><div class="txt">
@@ -267,7 +271,7 @@
 							<div class="news__txt">Краткий анонс новости кюретка кисло нейтрализует супрамолекулярный ансамбль так, как это могло влиять на реакцию Дильса-Альдера</div>
 						</div>
 					</div>
-					<div class="col-xs-4">
+					<div class="col-sm-4 col-xs-12">
 						<div class="news">
 							<div class="news__date">12 августа 2016</div>
 							<div class="news__img">
@@ -281,7 +285,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-4 col-xs-offset-4">
+				<div class="col-sm-4 col-sm-offset-4 col-xs-12">
 					<a href="#" class="btn">все новости</a>
 				</div>
 			</div>
@@ -307,11 +311,14 @@
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrv1MXaXB9mvXQ2qAWL4W-ZYX2U4r5B3Y"></script>
 			<script>
 				function initMap() {
-					var center = {lat: 55.685973, lng: 37.339480},
+					var viewPort = window.matchMedia( "(min-width: 768px)" ).matches,
+						center = viewPort ? {lat: 55.685973, lng: 37.339480}
+															: {lat: 55.6873, lng: 37.338},
 						blueSqure = {lat: 55.68375, lng: 37.34281},
 						octagon = {lat: 55.681204, lng: 37.3396},
 						//for html overlay
-						myLatlng = new google.maps.LatLng(55.6901,37.323);
+						myLatlng = viewPort ? new google.maps.LatLng(55.6901,37.323)
+																: new google.maps.LatLng(55.6905,37.3326);
 
 					// Create a map object and specify the DOM element for display.
 					var map = new google.maps.Map(document.getElementById('map'), {
@@ -329,11 +336,13 @@
 						icon: 'images/map/squre.png'
 					});
 					//octagon
-					var area = new google.maps.Marker({
-						map: map,
-						position: octagon,
-						icon: 'images/map/octagon.png'
-					});
+					if (viewPort) {
+						var area = new google.maps.Marker({
+							map: map,
+							position: octagon,
+							icon: 'images/map/octagon.png'
+						});
+					};
 					//Styles
 					var styles = [
 						{
@@ -364,7 +373,7 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-sm-6 col-xs-12">
 						<div class="footer__item footer__item--left">
 							121205, Москва, Россия,<br />
 							территория инновационного центра Сколково,
@@ -372,7 +381,7 @@
 							+7 (495) 005-9382, <a href="mailto:info@etbcat.com">info@etbcat.com</a>
 						</div>
 					</div>
-					<div class="col-xs-6">
+					<div class="col-sm-6 col-xs-12">
 						<div class="footer__item footer__item--right">
 							<div class="soc">
 								<a href="#" class="soc__item soc__item--fb">facebook</a>

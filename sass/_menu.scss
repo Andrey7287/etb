@@ -11,6 +11,7 @@ $menu-height: 34px;
 	}
 	@include breakpoint(mobile) {
 		display: none;
+		margin-top: 5px;
 	}
 	&__item {
 		@include breakpoint(desktop) {

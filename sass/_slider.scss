@@ -28,17 +28,16 @@
 	}
 	&__head {
 		@include font(48, 54, 600);
-		@include breakpoint(tablet) {
-			@include font(42, 48, 600);
-		}
-		@include breakpoint(mobile){
-			@include font(25, 27, 600);
-		}
 		color: #3f474a;
 		text-transform: uppercase;
 		margin-left: 77px;
 		@include breakpoint(tablet) {
+			@include font(42, 48, 600);
 			margin-left: 56px;
+		}
+		@include breakpoint(mobile){
+			@include font(25, 27, 600);
+			margin-left: 12px;
 		}
 		a {
 			@include link(#40484b, #005771);
@@ -59,7 +58,15 @@
 				position: absolute;
 				top: 12px;
 				right: -33px;
+				@include breakpoint(mobile){
+					top: 5px;
+				}
 			}
+		}
+	}
+	.arrow {
+		@include breakpoint(mobile) {
+			display: none;
 		}
 	}
 }
@@ -69,12 +76,18 @@
 	@include breakpoint (tablet) {
 		height: 352px;
 	}
+	@include breakpoint (mobile) {
+		height: 420px;
+	}
 	background: url(images/blue.jpg) 50% 0 no-repeat;
 	background-size: cover;
 	.white-title {
 		margin: 55px 0 40px;
 		@include breakpoint (tablet){
 			margin: 20px 62px 28px 0;
+		}
+		@include breakpoint (mobile) {
+			margin: 28px 0;
 		}
 	}
 }
@@ -84,6 +97,11 @@
 	@include breakpoint(tablet) {
 		img {
 			width: 85%;
+		}
+	}
+	&__item {
+		@include breakpoint(mobile) {
+			text-align: center;
 		}
 	}
 
@@ -97,16 +115,15 @@
 	border: 0;
 	line-height: 0;
 	top: calc(50% - 26px);
-	@include breakpoint(mobile){
-		display: none;
-	}
 	&.left,
-	&.prev {
+	&.prev,
+	&.left-person {
 		left: 13px;
 		background: sprite($site-sprite, arrow_left);
 	}
 	&.right,
-	&.next {
+	&.next,
+	&.right-person {
 		right: 13px;
 		background: sprite($site-sprite, arrow_right);
 	}
@@ -118,6 +135,18 @@
 		}
 	}
 
+}
+.team-outer {
+	position: relative;
+	.arrow {
+		display: none;
+		@include breakpoint(mobile){
+			display: block;
+		}
+		@include breakpoint(small){
+			display: none;
+		}
+	}
 }
 
 
