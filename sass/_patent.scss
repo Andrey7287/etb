@@ -1,7 +1,19 @@
 .patent {
 	margin: 17px 0 40px;
+	@include breakpoint (mobile) {
+		width: 290px;
+		margin: 17px auto 40px;
+	}
 	.head-link {
 		margin-top: 10px;
+	}
+	&__img {
+		img {
+			width: 100%;
+			@include breakpoint (mobile){
+				width: auto;
+			}
+		}
 	}
 	&__txt {
 		height: 100%;

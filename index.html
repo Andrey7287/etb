@@ -24,7 +24,7 @@
 						</div>
 						<div class="top-panel__item nav">
 							<a href="#"class="nav__item nav__item--home">home</a>
-							<a href="#"class="nav__item nav__item--mail">mail</a>
+							<a href="mailto:mail@mail.com"class="nav__item nav__item--mail">mail</a>
 							<a href="#"class="nav__item nav__item--search">search</a>
 							<a href="#"class="nav__item nav__item--options">options</a>
 						</div>
@@ -56,6 +56,7 @@
 								</ul>
 							</li>
 							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Технологии </span></a></li>
+							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Исследования</span></a></li>
 							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Решения </span></a>
 							<ul class="dropdown dropdown__closed">
 									<li class="dropdown__item"><a href="">
@@ -70,8 +71,21 @@
 								</ul>
 							</li>
 							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Окружающая среда</span></a></li>
-							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Медиа </span></a></li>
-							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Контактная информация</span></a></li>
+							<li class="site-nav__item">
+								<a href="" class="site-nav__link"><span>Медиа </span></a>
+								<ul class="dropdown dropdown__closed">
+									<li class="dropdown__item"><a href="">
+										<span>Публикации в прессе</span></a>
+									</li>
+									<li class="dropdown__item"><a href="">
+										<span>Публикации в прессе</span></a>
+									</li>
+									<li class="dropdown__item"><a href="">
+										<span>Публикации в прессе</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="site-nav__item"><a href="" class="site-nav__link"><span>Контакты</span></a></li>
 						</ul>
 					</nav>
 				</div>
@@ -309,6 +323,7 @@
 				</div>
 			</div>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrv1MXaXB9mvXQ2qAWL4W-ZYX2U4r5B3Y"></script>
+			<script src="js/CustomGoogleMapMarker.js"></script>
 			<script>
 				function initMap() {
 					var viewPort = window.matchMedia( "(min-width: 768px)" ).matches,
@@ -343,18 +358,7 @@
 							icon: 'images/map/octagon.png'
 						});
 					};
-					//Styles
-					var styles = [
-						{
-							"elementType": "geometry.fill",
-							"stylers": [
-								{
-									"color": "#f0fbff"
-								}
-							]
-						}
-					];
-					map.setOptions({styles: styles});
+
 					//Html overlay
 					overlay = new CustomMarker(
 						'mapContact',

@@ -55,3 +55,5 @@ CustomMarker.prototype.remove = function() {
 CustomMarker.prototype.getPosition = function() {
 	return this.latlng;
 };
+
+

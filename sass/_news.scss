@@ -42,6 +42,19 @@
 			}
 		}
 	}
+	.news {
+		@include breakpoint (mobile) {
+			&::after {
+				content: ".";
+				font-size: 0;
+				display: block;
+				width: 70%;
+				border-bottom: 1px solid #fff;
+				margin: 25px 0;
+
+			}
+		}
+	}
 }
 /* FULL */
 .quoted {

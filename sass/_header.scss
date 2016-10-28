@@ -68,6 +68,7 @@ header{
 			line-height: 10px;
 			margin-right: 10px;
 			vertical-align: middle;
+			border: 0;
 			&::before {
 				content: ".";
 				width: 11px;
@@ -79,43 +80,6 @@ header{
 					background: sprite($site-sprite, site_#{$opt});
 				}
 			}
-		}
-	}
-	.search {
-		margin-right: 30px;
-		padding-right: 30px;
-		width: calc(100% - 270px);
-		position: relative;
-		@include breakpoint(tablet) {
-			margin-right: 75px;
-			width: calc(100% - 487px);
-		}
-		@include breakpoint(mobile){
-			width: 100%;
-			margin-right: 0;
-			position: absolute;
-			top:0;
-			left:0;
-		}
-		&__input {
-			width: 100%;
-			border: 0;
-			border-bottom: 1px solid #e3e3e3;
-			color: $soft-grey;
-			padding: 0 10px;
-			@include font(12, 26);
-			margin-right: 10px;
-			&:focus {
-				outline: none;
-			}
-			&:hover {
-				border-bottom: 1px solid #01a3d4;
-			}
-		}
-		&__submit {
-			position: absolute;
-			top: calc(50% - 10px);
-			right: 0;
 		}
 	}
 	.burger {
@@ -159,3 +123,57 @@ header{
 	}
 }
 
+.search {
+	margin-right: 30px;
+	padding-right: 30px;
+	width: calc(100% - 270px);
+	position: relative;
+	@include breakpoint(tablet) {
+		margin-right: 75px;
+		width: calc(100% - 487px);
+	}
+	@include breakpoint(mobile){
+		width: 100%;
+		margin-right: 0;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	&__input {
+		width: 100%;
+		border: 0;
+		border-bottom: 1px solid #e3e3e3;
+		color: $soft-grey;
+		padding: 0 10px;
+		@include font(12, 26);
+		margin-right: 10px;
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			border-bottom: 1px solid #01a3d4;
+		}
+	}
+	&__submit {
+		position: absolute;
+		top: calc(50% - 10px);
+		right: 0;
+	}
+	//search into content
+	&--full{
+		width: 100%;
+		@include breakpoint(tablet) {
+			margin-right: 0;
+		}
+		@include breakpoint(mobile){
+			position: relative;
+		}
+		.search__input {
+			font-size: 1em;
+			margin-bottom: 10px;
+		}
+		.search__submit {
+			top: calc(50% - 23px);
+		}
+	}
+}

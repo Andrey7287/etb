@@ -9,7 +9,7 @@
 		});
 		$cols.height(maxH);
 	};
-	$('.patent').ravno();
+
 	$('.partner__txt').ravno();
 
 	$('.slider').slick({
@@ -61,6 +61,7 @@
 	};
 
 	var viewPort = window.matchMedia( "(min-width: 768px)" );
+	var tablet = window.matchMedia( "(min-width: 768px) and (max-width: 991px)" );
 
 	function adaptive () {
 
@@ -73,6 +74,14 @@
 			if (slider) {
 				$('.team-slider').slick('unslick');
 			}
+			//partners
+			alignPartners ();
+			//align patents
+			if ( $('.patent').length ) {
+				$('.head-link').ravno();
+				var imgHeight = $('.patent__img').first().outerHeight();
+				$('.patent__txt').outerHeight(imgHeight);
+			}
 
 		} else {
 			// small screen menu
@@ -84,11 +93,22 @@
 					prevArrow: $('.left-person'),
 					nextArrow: $('.right-person')
 				});
-			}
+			};
 		}
 	};
+
+	function alignNewsTitles () {
+
+		if ( tablet.matches && $('.announce .head-link').length ){
+			$('.announce .head-link').ravno();
+		};
+
+	};
+
+	alignNewsTitles();
 	adaptive();
 	$(window).resize(adaptive);
+	$(window).resize(alignNewsTitles);
 
 	/*footer icons*/
 	$('.soc').on('mousedown', '.soc__item', function(){
@@ -103,6 +123,43 @@
 		e.preventDefault();
 		$('.site-nav').toggle('slow');
 	});
+
+	//press footer
+	(function pressFooter(){
+		$('.content').height('auto');
+		//bitrix panel
+		var adminHeight = $('#bx-panel').length ? $('#bx-panel').outerHeight(true) : 0;
+
+		var viewportHeight = $(window).outerHeight(true);
+
+		var headerHeight = $('header').outerHeight(true);
+		var contentHeight = $('.content').outerHeight(true);
+		var footerHeight = $('footer').outerHeight(true);
+
+		var contentHeight = headerHeight + contentHeight + footerHeight + adminHeight;
+
+
+		if ( (viewportHeight - contentHeight) > 0 ) {
+			contentHeight = viewportHeight - ( headerHeight + footerHeight + adminHeight);
+			$('.content').height(contentHeight+"px");
+		}
+
+	})();
+
+	//Align partners block
+	function alignPartners (){
+		var $partner = $('.partner');
+		if ( $partner.length ) {
+			console.log('!');
+			$partner.each(function(){
+				//console.log(this);
+				var $txt = $(this).find('.partner__outer');
+				var $img = $(this).find('.partner__img');
+				$txt.add($img).ravno();
+			});
+		}
+	};
+
 
 })($);
 /*MY SCRIPTS END*/

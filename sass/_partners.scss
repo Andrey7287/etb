@@ -1,10 +1,17 @@
 .partner {
-	margin-top: 10px;
-	margin-bottom: 25px;
+	margin: 20px 0;
+	clear: both;
+	@include breakpoint(mobile) {
+		max-width: 480px;
+		margin: 20px auto;
+	}
 	&__name {
 		height: 109px;
 		display: table;
 		position: relative;
+		@include breakpoint(mobile) {
+			width: 100%;
+		}
 		&::before {
 			content: ".";
 			font-size: 0;
@@ -13,23 +20,59 @@
 			width: 0;
 			height: 0;
 			z-index: 5;
+			@include breakpoint(mobile) {
+				height: 109px;
+				width: 135px;
+			}
 		}
+		&::after {
+			@include breakpoint(mobile) {
+				content: ".";
+				font-size: 0;
+				position: absolute;
+				display: block;
+				height: 109px;
+				width: 135px;
+			}
+		}
+	}
+	&__outer {
+		display: table;
+		@include breakpoint(mobile) {
+			display: block;
+			position: relative;
+			z-index: 3;
+		}
+	}
+	&__inner {
+		display: table-cell;
 	}
 	&__title {
 		color: #fff;
 		@include font(20);
 		display: table-cell;
 		vertical-align: middle;
+		@include breakpoint(mobile) {
+			@include font(16);
+		}
 		span {
-			@include font(30,26,800,20);
+			@include font(20,26,800,16);
 			display: block;
 		}
 	}
 
 	&__img {
 		position: relative;
-		height: 436px;
-		overflow: hidden;
+		width: 50%;
+		float: left;
+		display: table;
+		@include breakpoint(mobile){
+			width: 100%;
+			z-index: 6;
+		}
+		.img-inner {
+			display: table-cell;
+		}
 		img {
 			display: block;
 			width: 100%;
@@ -41,6 +84,9 @@
 			display: block;
 			width: 0;
 			height: 0;
+			@include breakpoint(mobile) {
+				display: none;
+			}
 		}
 	}
 
@@ -50,49 +96,116 @@
 		}
 	}
 
-	&:nth-child(odd){
+	&:nth-child(even){
+		@include breakpoint(mobile) {
+			padding-top: 65px;
+		}
+		.partner__inner {
+			vertical-align: bottom;
+			padding-right: 15px;
+			@include breakpoint(mobile) {
+				padding-right: 0;
+			}
+		}
 		.partner__name {
 			background: #01a3d4;
 			text-align: right;
 			padding-left: 15px;
+			@include breakpoint(mobile) {
+				position: absolute;
+				top: -65px;
+				padding-right: 55px;
+				padding-left: 0;
+			}
 			&::before {
 				border-bottom: 109px solid #01a3d4;
 				border-right: 146px solid transparent;
 				right: -146px;
+				@include breakpoint(mobile) {
+					border: 0;
+					background: #01a3d4;
+					left: -135px;
+				}
+			}
+			&::after {
+			@include breakpoint(mobile) {
+					border: 0;
+					background: #01a3d4;
+					right: -135px;
+				}
 			}
 		}
 		.partner__img {
+			padding-left: 15px;
+			@include breakpoint(mobile) {
+				padding-left: 0;
+			}
+			float: right;
+			.img-inner {
+				vertical-align: bottom;
+			}
 			&::before {
-				border-top: 109px solid #fff;
-				border-left: 146px solid transparent;
-				top: 0;
-				right: 0;
+				border-bottom: 109px solid #fff;
+				border-right: 146px solid transparent;
+				bottom: 0;
+				left: 15px;
 				z-index: 4;
 			}
 		}
 		.partner__txt {
 			p {
 				text-align: right;
+				@include breakpoint(mobile) {
+					text-align: left;
+				}
 			}
 		}
+
 	}
-	&:nth-child(even){
+	&:nth-child(odd){
+		.partner__inner {
+			padding-left: 15px;
+			@include breakpoint(mobile){
+				padding-left: 0;
+			}
+		}
 		.partner__name {
 			background: #80c802;
 			text-align: left;
 			padding-right: 15px;
+			@include breakpoint(mobile) {
+				padding-right: 0;
+				padding-left: 55px;
+			}
 			&::before {
 				border-top: 109px solid #80c802;
 				border-left: 146px solid transparent;
 				left: -146px;
+				@include breakpoint(mobile) {
+					border: 0;
+					background: #80c802;
+					left: -135px;
+				}
+			}
+			&::after {
+			@include breakpoint(mobile) {
+					border: 0;
+					background: #80c802;
+					right: -135px;
+				}
 			}
 		}
 		.partner__img {
+			padding-right: 15px;
+			@include breakpoint(mobile){
+				padding-right: 0;
+				margin-bottom: -38px;
+			}
 			&::before {
-				border-bottom: 109px solid #fff;
-				border-right: 146px solid transparent;
-				bottom: 0;
-				left: 0;
+				border-top: 109px solid #fff;
+				border-left: 146px solid transparent;
+				top: 0;
+				right: 15px;
 				z-index: 4;
 			}
 		}
