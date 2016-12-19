@@ -22,6 +22,7 @@
 	}
 	img {
 		width: 100%;
+		max-width: none;
 		@include breakpoint(mobile){
 			width: 160%;
 		}
@@ -39,15 +40,23 @@
 			@include font(25, 27, 600);
 			margin-left: 12px;
 		}
+		@include breakpoint(small){
+			@include font(18, 20, 600);
+			margin-left: 0;
+		}
 		a {
 			@include link(#40484b, #005771);
 			@include font(20, 26, 400, 48);
-			@include breakpoint(mobile){
-				@include font(10, 12, 400, 25);
-			}
 			display: inline-block;
 			margin-top: 20px;
 			position: relative;
+			@include breakpoint(mobile){
+				@include font(10, 12, 400, 25);
+				margin-top: 12px;
+			}
+			@include breakpoint(small){
+				margin-top: 0;
+			}
 			&::after {
 				content: ".";
 				text-indent: -99999px;
@@ -68,6 +77,9 @@
 		@include breakpoint(mobile) {
 			display: none;
 		}
+	}
+	.slick-slide {
+		height: auto;
 	}
 }
 
@@ -104,7 +116,9 @@
 			text-align: center;
 		}
 	}
-
+	.slick-slide {
+		height: auto;
+	}
 }
 .arrow {
 	position: absolute;
@@ -146,6 +160,9 @@
 		@include breakpoint(small){
 			display: none;
 		}
+	}
+	.slick-slide {
+		height: auto;
 	}
 }
 

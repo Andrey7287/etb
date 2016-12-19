@@ -73,6 +73,13 @@
 		background: sprite($site-sprite, q) no-repeat;
 	}
 }
+.news-source {
+	width: 70%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: top;
+}
 
 .back{
 	text-align: right;

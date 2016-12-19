@@ -81,10 +81,14 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 	};
 
 	$('.partner__txt').ravno();
+	$('.team__post').ravno();
+	$('.team__name').ravno();
+	//$('.patent').ravno();
 
 	$('.slider').slick({
 		prevArrow: $('.left'),
 		nextArrow: $('.right'),
+		autoplay: true,
 		responsive: [{
 			breakpoint: 768,
 			settings: {
@@ -123,6 +127,9 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 		}
 	};
 	function toggleMenu(e){
+
+		if ( !$(this).next().is('.dropdown') ) { return; } //hasn`t menu
+
 		e.preventDefault();
 		$('.site-nav__item').removeClass('site-nav__item--act');
 		$(this).parent().addClass('site-nav__item--act');

@@ -33,7 +33,7 @@
 		}
 	}
 	&__txt {
-		@include font(20, 24);
+		@include font(20, 26);
 		@include breakpoint(mobile) {
 			@include font(15, 20);
 		}
@@ -46,9 +46,6 @@
 /*ordered list*/
 .advantages-pict {
 	padding-top: 60px;
-	img {
-		width: 100%;
-	}
 }
 .advantages {
 	margin: 0;
@@ -76,6 +73,9 @@
 			border-radius: 25px;
 			background: #e1e1e1;
 			@include font(36,50,700,20);
+			@include breakpoint(mobile) {
+				line-height: 1.7em;
+			}
 			color: #fff;
 			text-align: center;
 			position: absolute;
@@ -87,6 +87,7 @@
 
 /*TEAM*/
 .team {
+	display: block;
 	margin: 20px 0 60px;
 	@include breakpoint(tablet) {
 		margin: 20px 0 20px;
@@ -112,15 +113,40 @@
 	}
 	&__name {
 		@include font(20);
-		color: $black;
 		text-align: center;
 		margin: 5px 0;
+		a {
+			color: $black;
+		}
+		&--detail {
+			text-align: left;
+		}
 	}
 	&__post {
 		@include font(18);
 		color: $grey;
 		text-align: center;
+		&--detail {
+			text-align: left;
+			position: relative;
+			margin-bottom: 25px;
+			&::after {
+				content: ".";
+				font-size: 0;
+				line-height: 0;
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: -12px;
+				width: 80px;
+				height: 5px;
+				background: #dadada;
+			}
+		}
 	}
+}
+.team-detail {
+	border-bottom: 1px solid #e1e1e1;
 }
 
 /*NEWS*/
@@ -158,9 +184,10 @@
 		margin: 7px 0 23px;
 		@include breakpoint (mobile) {
 			margin: 7px 0;
+			display: inline-block;
 		}
 		img {
-			width: 100%;
+			//max-width: 100%;
 		}
 		.txt {
 			position: absolute;
@@ -180,6 +207,7 @@
 			span {
 				@include font(24,26,700);
 				color: #fff;
+				text-shadow: 1px 1px 0px grey;
 			}
 		}
 	}

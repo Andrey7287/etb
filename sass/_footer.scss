@@ -38,7 +38,7 @@
 				height: 36px;
 				display: inline-block;
 			}
-			@each $i in vk, fb {
+			@each $i in in, fb {
 				&--#{$i}::before {
 					background: sprite($site-sprite, soc_#{$i});
 				}

@@ -9,9 +9,7 @@
 		height: 109px;
 		display: table;
 		position: relative;
-		@include breakpoint(mobile) {
-			width: 100%;
-		}
+		width: 100%;
 		&::before {
 			content: ".";
 			font-size: 0;
